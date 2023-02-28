@@ -1,18 +1,20 @@
-<center>Федеральное государственное автономное <br>образовательное учреждение высшего образования <br>
+<p style="text-align: center; font-weight: bold">Федеральное государственное автономное <br>образовательное учреждение высшего образования <br>
 «НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ<br>
-«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»</center>
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»</p>
 
+---
+<h1 style="text-align: center; font-weight: bold">
+ДИПЛОМНЫЙ ПРОЕКТ
+</h1>
 
-
-<h1><center>ДИПЛОМНЫЙ ПРОЕКТ</center></h1>
-
-<h3><center>Тема: «Получение данных об  изменении <br>
-индексов цен на группы товаров»</center></h3>
-<h5><center>в рамках курса:
+<h3 style="text-align: center; font-weight: bold">Тема: «Получение данных об  изменении <br>
+индексов цен на группы товаров»</h3>
+<h5 style="text-align: center; font-weight: bold">в рамках курса:
 «Инструментальные средства для <br>автоматизации 
-и анализа данных. Продвинутый»</center></h2>
+и анализа данных. Продвинутый»</h2>
 
-<div align="center">
+---
+<div style="text-align: center; font-weight: bold">
 <h5>
 Состав группы:<br>
 Александра Довгополова <br>
@@ -24,12 +26,12 @@
 </h5>
 </div>
 
-<div align="center">Руководитель:
+<div style="text-align: center; font-weight: bold">Руководитель:
 Дмитрий Румянцев</div>
 
 
 
-<div align="center">Москва, 2023 г.</div>
+<div style="text-align: center; font-weight: bold">Москва, 2023 г.</div>
 
 
 
