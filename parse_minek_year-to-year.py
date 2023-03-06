@@ -14,6 +14,7 @@ from key import host, port, username, password
 import psycopg2
 from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 
 
 
@@ -57,7 +58,7 @@ def string_to_date(text):
     text = text[39:].replace(' года', '')  # " 21 декабря 2022"
     # print(text.strip(), '.')
 
-    months = {"января": "01", "февраля": "02", "матра": "03", "апреля": "04", "мая": "05", "июня": "06",
+    months = {"января": "01", "февраля": "02", "марта": "03", "апреля": "04", "мая": "05", "июня": "06",
               "июля": "07",
               "августа": "08", "сентября": "09", "октября": "10", "ноября": "11", "декабря": "12"}
     return dt.strptime(text[0:text.find(" ", 0)] + '.' \
@@ -91,10 +92,12 @@ def main(choice: int):
     #
     # Значение ключа получается с помощью среза (:). Чтоб срезать href=" прибавляем 6 символов, и чтоб оставить .html
     # прибавляем 5 символов, т.к. конец среза не включается в получаемое значение)
-
+    # print("Пока что всё хорошо1")
+    # print(soup)
     for i in soup.find_all(href=re.compile('o_tekushchey_cenovoy')):
+        # print(i)
         LINK_DATES[string_to_date(i.text)] = str(i)[str(i).find('''href="''') + 6:str(i).find('.html') + 5]
-
+    # print("97 - ок!")
     # Конкатенация для получения полной ссылки
     # sorted() - сортирует данные словаря по ключу (.. а там дата), параметр reverse делает список по убыванию
     # [0] - получаем первый (верхний) ключ и подставляем его в Link_dates
@@ -229,8 +232,10 @@ def chart():
         dates = []
 
     # print(dict_meat)
-    print(dict_meat['Баранина'][1])
-
+    # print(dict_meat['Баранина'][1])
+    print('Попытка построить график')
+    mpl.use('TkAgg')  # !IMPORTANT
+    # print(plt.subplots())
     fig, ax1 = plt.subplots()
     color = 'tab:red'
     ax1.set_xlabel('Дата')
@@ -238,6 +243,7 @@ def chart():
     for tick in ax1.get_xticklabels():
         tick.set_rotation(75)
     ax1.set_ylabel('Значение индекса')
+    print('Попытка построить график')
     ax1.plot(dict_meat['Баранина'][1], dict_meat['Баранина'][0], color='r', label='Баранина')
     # ax1.tick_params(axis='y', labelcolor=color)
     # Fixing random state for reproducibility
